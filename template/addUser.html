@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add User</title>
+    <style>
+        .myClass div{
+            margin-block:5px;
+        }
+    </style>
+</head>
+<body>
+    {% include "./navbar.html" %}
+<form action="/user/add/user" method="post">
+ {% csrf_token %}
+ <div class="container-fluid w-75 my-5 myClass" style="border: 1px solid black;padding: 10px;">
+     
+        <div class="row">
+            <div class="col-6">
+                <input class="form-control"  placeholder="Name" name="name" type="text"/>
+            </div>
+            <div class="col-6">
+                <input class="form-control" placeholder="User Name" name="username" type="text"/>
+            </div>
+            <div>
+                <div class="row">
+                    <div class="col-6">
+                        <input class="form-control" placeholder="Eamil Id" name="emailid" type="email"/>
+                    </div>
+                    <div class="col-6">
+                        <input class="form-control" placeholder="Contact Number" name="mobilenumber" type="number"/>
+                    </div>
+                    <div>
+                        <div class="row">
+                            <div class="col-12">
+                                <textarea class="form-control" placeholder="Address" name="address" rows="3" ></textarea>
+                            </div>
+                            
+                            <div>
+                                <div class="row">
+                                    <div class="col-12 text-dark">
+                                        Date Of Birth
+                                    </div>
+                                    
+                                    <div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <input class="form-control"  name="dateofbirth" type="date"/>
+                                    </div>
+                                    
+                                    <div>
+                                        <div class="row d-flex justify-content-center">
+                                            <input class="btn btn-primary w-75"   type="submit" value="Add User"/>
+                                            
+                                        </div>
+                                        <div class="row d-flex justify-content-center">
+                                            {{msg}}                                            
+                                        </div>
+    </div>
+</form>
+</body>
+</html>
